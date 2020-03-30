@@ -1,0 +1,33 @@
+body{
+    overflow-x: hidden;
+}
+#cadastro{
+    border: 1px solid #cecece;
+    border-radius: 4px;
+    margin: 20px 10px 20px 0;
+    padding: 10px;
+}
+.titulo{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#tit-form{
+    margin: -15px -15px 10px -10px;
+    color: #ffffff;
+    background-color: rgb(20, 29, 53);
+    padding: 20px;
+    border-radius: 4px
+
+}
+#tit-form h4{
+    margin-left: 15px;
+}
+.btn-primary{
+    background-color: rgb(20, 29, 53);
+    margin-left: -10px
+}
+.botao{
+    margin: 15px  -10px -10px;
+    background-color: #cecece;
+    padding: 20px;
+}
