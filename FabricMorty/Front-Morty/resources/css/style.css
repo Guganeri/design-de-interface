@@ -1,0 +1,17 @@
+body {
+    background-color: #181a1b !important;
+    color: #ffffff !important;
+}
+
+.dark {
+    background-color: #181a1b !important;
+    color: #ffffff !important;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    bottom: 0;
+    /* position: fixed; */
+}

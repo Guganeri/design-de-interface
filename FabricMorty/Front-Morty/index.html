@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Moremias</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .icon {
+            border-radius: 10%;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="resources/css/floating-labels.css" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body>
+    <form class="form-signin">
+        <div class="text-center mb-4">
+            <img class="mb-4 icon" src="resources/images/icon.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Welcome to Moremias</h1>
+            <p>a Jeremias web implementation to do two things</p>
+        </div>
+        <br />
+        <div class="d-flex justify-content-center">
+            <div class="form-label-group">
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#setversion">Set
+                    Version</button>
+                <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#envcleanup">Env
+                    Cleanup</button>
+            </div>
+        </div>
+        <p class="mt-5 mb-3 text-muted text-center">&copy; 2020 Copyright:
+            <a href="#"> Devops-JP</a>
+        </p>
+    </form>
+
+    <!-- Modal Set Version -->
+    <div class="modal fade" id="setversion" tabindex="-1" role="dialog" aria-labelledby="setversionCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="setversionCenterTitle">Set New Application Version</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="http://10.70.30.170:8089/set" method="POST" id="setversionForm">
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Rancher Set</label>
+                            <input type="text" class="form-control dark" id="recipient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Env. Set:</label>
+                            <input type="text" class="form-control dark" id="recipient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Task ID:</label>
+                            <input type="text" class="form-control dark" id="recipient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Stack Version Name:</label>
+                            <input type="text" class="form-control dark" id="recipient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Application ID:</label>
+                            <select class="form-control dark" id="app_id" required>
+                                <option value="">None</option>
+                                <option value="C6C03T6EQ">Pier</option>
+                                <option value="GHWNJDPAR">Heimdall</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="setversionSubmitBtn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Env Cleanup -->
+    <div class="modal fade" id="envcleanup" tabindex="-1" role="dialog" aria-labelledby="envcleanupTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="envcleanupTitle">Envionment Cleanup</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="http://10.70.30.170:8089/clear" method="POST" id="envcleanupForm">
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Rancher Set</label>
+                            <input type="text" class="form-control dark" id="recipient-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Env. Set:</label>
+                            <input type="text" class="form-control dark" id="recipient-name" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="envcleanupSubmitBtn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            
+            $("#setversionSubmitBtn").click(function(){        
+                $("#setversionForm").submit(); // Submit the form
+            });
+
+            $("#envcleanupSubmitBtn").click(function(){        
+                $("#envcleanupForm").submit(); // Submit the form
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
