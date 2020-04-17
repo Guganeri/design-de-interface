@@ -1,61 +1,107 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Contato - Barbearia Alura</title>
 
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <div class="caixa">
-                <h1><img src="img/logo.png"></h1>
-                
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="produtos.html">Produtos</a></li>
-                        <li><a href="contato.html">Contato</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <title>Contato - Barbearia Alura</title>
 
-        <main>
-            <form action="">
-                <label for="nome">Nome e Sobrenome</label>
-                <input type="text" name="nome" id="nome" class="input-padrao">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" class="input-padrao">
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="img/logo.png" alt="logo da barbearia alura"></h1>
 
-                <label for="telefone">Telefone</label>
-                <input type="text" name="telefone" id="telefone" class="input-padrao">
-                
-                <label for="mensagem">Mensagem</label>
-                <textarea name="" id="mensagem" cols="70" rows="10" class="input-padrao"></textarea>
-                <div>
-                    <p>Como prefere nosso contato?</p>
-                    <label for="radio-email"><input type="radio" value="email" name="contato" id="radio-email">Email</label>
-                    
-                    <label for="radio-telefone"><input type="radio" value="telefone" name="contato" id="radio-telefone">Telefone</label>
-                    
-                    <label for="radio-whatsapp"><input type="radio" value="whatsapp" name="contato" id="radio-whatsapp">Whatsapp</label>
-                    
-                </div>
-                <label for="" class="checkbox"><input type="checkbox">Gostaria de receber nossas novidades por email?</label>
-                
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-                <input type="submit">
-            </form>
+    <main>
+        <form action="">
+            <label for="nome">Nome e Sobrenome</label>
+            <input type="text" name="nome" id="nome" class="input-padrao" required>
 
-        </main>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
 
-        <footer>
-            <img src="img/logo-branco.png">
-            <p class="copyright">&copy; Copyright Gustavo Neri 2020</p>
-        </footer>
+            <label for="telefone">Telefone</label>
+            <input type="tel" name="telefone" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
 
-    </body>
+            <label for="mensagem">Mensagem</label>
+            <textarea name="" id="mensagem" cols="70" rows="10" class="input-padrao" required></textarea>
+            <fieldset>
+                <legend>Como prefere nosso contato?</legend>
+                <label for="radio-email"><input type="radio" value="email" name="contato" id="radio-email">Email</label>
+
+                <label for="radio-telefone"><input type="radio" value="telefone" name="contato"
+                        id="radio-telefone">Telefone</label>
+
+                <label for="radio-whatsapp"><input type="radio" value="whatsapp" name="contato"
+                        id="radio-whatsapp" checked>Whatsapp</label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Qual horário prefere ser atendido?</legend>
+                <select name="" id="">
+                    <option value="">Manhã</option>
+                    <option value="">Tarde</option>
+                    <option value="">Noite</option>
+                </select>
+            </fieldset>
+
+            <label class="checkbox"><input type="checkbox" checked>Gostaria de receber nossas novidades por email?</label>
+
+            <input type="submit" value="Enviar Formulario" class="enviar">
+        </form>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Dia</th>
+                    <th>Horário</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Segunda</td>
+                    <td>8h ~ 20hrs</td>
+                </tr>
+                <tr>
+                    <td>Terça</td>
+                    <td>8h ~ 20hrs</td>
+                </tr>
+                <tr>
+                    <td>Quarta</td>
+                    <td>8h ~ 20hrs</td>
+                </tr>
+                <tr>
+                    <td>Quinta</td>
+                    <td>8h ~ 20hrs</td>
+                </tr>
+                <tr>
+                    <td>Sexta</td>
+                    <td>8h ~ 20hrs</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+    <footer>
+        <img src="img/logo-branco.png" alt="logo da barbearia alura">
+        <p class="copyright">&copy; Copyright Gustavo Neri 2020</p>
+    </footer>
+
+</body>
+
 </html>
